@@ -2,8 +2,10 @@ import queue
 from threading import Thread
 import os
 import requests
+
+
 class DownloadThread(Thread):
-    import os 
+    
     def __init__(self, queue, name):
         super().__init__()
         self.queue = queue
@@ -37,7 +39,8 @@ def main(urls):
         q.put(url)
        
     q.join()  # all cheeki-breeki
- 
+
+
 main([
     "http://www.irs.gov/pub/irs-pdf/f1040.pdf",
     "http://www.irs.gov/pub/irs-pdf/f1040a.pdf",
@@ -45,3 +48,4 @@ main([
     "http://www.irs.gov/pub/irs-pdf/f1040es.pdf",
     "http://www.irs.gov/pub/irs-pdf/f1040sb.pdf"
 ])
+
